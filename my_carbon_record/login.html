@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <title>紀錄我的碳排</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      body{ background-image:url(img/nature.jpeg);
+      }
+    </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+<!-- Spinner End -->
+
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0">記錄我的碳排</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link">首頁</a>
+            <a href="food.html" class="nav-item nav-link">食物</a>
+            <div class="nav-item dropdown">
+                <a href="transportation.html" class="nav-item nav-link active dropdown-toggle"
+                   data-bs-toggle="dropdown">大眾運輸</a>
+
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="hsr.html" class="dropdown-item">高鐵</a>
+                    <a href="train.html" class="dropdown-item">火車</a>
+                    <a href="mrt.html" class="dropdown-item">捷運</a>
+                    <a href="bus.html" class="dropdown-item">公車</a>
+                    <a href="bicycle.html" class="dropdown-item">腳踏車</a>
+                    <a href="testimonial.html" class="dropdown-item">走路</a>
+                </div>
+            </div>
+            
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">個人運輸工具</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="car.html" class="dropdown-item ">汽車</a>
+                    <a href="motor.html" class="dropdown-item">機車</a>
+                </div>
+            </div>
+            <a href="finaldatapre.html" class="nav-item nav-link">總結</a>
+            <a href="#" class="nav-item nav-link">社群</a>
+        </div>
+        <a href="login.html" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">登入<i
+                class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+      <!-- Quote Start -->
+      <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="fs-5 fw-bold text-primary"></h1>
+                
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
+                      <h1 align="center" class="display-5 mb-5">Login</h1>
+                       <form>
+                        <div class="row g-3">
+                            <div class="col-sm-15">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control border-0" id="acc" placeholder="Your Email">
+                                    <label for="acc">帳號: </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-15">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                    <label for="email">電子郵件: </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-15">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control border-0" id="pwd" placeholder="Your Password">
+                                    <label for="pwd">密碼: </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 text-center">
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                <button class="btn btn-primary py-2 px-5" type="submit">登錄</button>
+                                <a align="right" href="#">
+                                  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;忘記密碼?
+                                </a>
+                            </div>
+                           <div align="right">
+                              
+                            <a align="right" href="register.html">
+                              尚未註冊? &nbsp;&nbsp;&nbsp;
+                            </a>
+                          </div>
+                        </div>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+<!-- JavaScript Libraries -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4rk2GPj6oOOai6rIQE1OMQQROAHCiAdc",
+      authDomain: "tire-1df88.firebaseapp.com",
+      projectId: "tire-1df88",
+      storageBucket: "tire-1df88.appspot.com",
+      messagingSenderId: "399815112291",
+      appId: "1:399815112291:web:d7199bc20708744d906a56"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    // Initialize Firebase Authentication and get a reference to the service
+    const auth = getAuth(app);
+
+  </script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/parallax/parallax.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

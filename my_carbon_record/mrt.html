@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>記錄我的碳排</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!--    表格連結-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+<!-- Spinner End -->
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0">記錄我的碳排</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link">首頁</a>
+            <a href="food.html" class="nav-item nav-link">食物</a>
+            <div class="nav-item dropdown">
+                <a href="transportation.html" class="nav-item nav-link active dropdown-toggle"
+                   data-bs-toggle="dropdown">大眾運輸</a>
+
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="hsr.html" class="dropdown-item">高鐵</a>
+                    <a href="train.html" class="dropdown-item">火車</a>
+                    <a href="mrt.html" class="dropdown-item">捷運</a>
+                    <a href="bus.html" class="dropdown-item">公車</a>
+                    <a href="bicycle.html" class="dropdown-item">腳踏車</a>
+                    <a href="testimonial.html" class="dropdown-item">走路</a>
+                </div>
+            </div>
+            
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">個人運輸工具</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="car.html" class="dropdown-item ">汽車</a>
+                    <a href="motor.html" class="dropdown-item">機車</a>
+                </div>
+            </div>
+            <a href="finaldatapre.html" class="nav-item nav-link">總結</a>
+            <a href="#" class="nav-item nav-link">社群</a>
+        </div>
+        <a href="login.html" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">登入<i
+                class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-4 animated slideInDown">捷運</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#">大眾運輸</a></li>
+                <li class="breadcrumb-item"><a href="#">捷運</a></li>
+
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Service Start -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-bold text-primary">捷運計算</p>
+            <h1 class="display-5 mb-5">捷運從哪裡坐到哪裡?</h1>
+        </div>
+
+        <div class="container p-5 my-5 border row">
+            <h1>日期</h1>
+            <p>請先選擇紀錄的日期</p>
+            <form action="">
+                <label>
+                   填入今天的日期
+                    <input type="date" name="recordDate" />
+                </label>
+
+            </form>
+
+
+        </div>
+
+        <div class="container p-5 my-5 border row">
+            <h1>選取站數</h1>
+            <p>請先選擇線再選出發站跟抵達站</p>
+<br>
+            <!--            先選出發站所在的線-->
+            <h2>出發站</h2>
+            <select class="form-control" id="slt_line_dep">
+                <option>請先選擇線</option>
+                <option value="#line_dep_BR">文湖線</option>
+                <option value="#line_dep_R">淡水信義線</option>
+                <option value="#line_dep_G">松山新店線</option>
+                <option value="#line_dep_O">中和新蘆線</option>
+                <option value="#line_dep_BL">板南線</option>
+                <option value="#line_dep_Y">環狀線</option>
+            </select>
+
+            <hr>
+            <!--            再選站-->
+            <!--選取文湖線後會出現的站-->
+            <div id="line_dep_BR" class="A-4">文湖線
+                <label id="lblTitle_dep_BR">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#BR_dep_1">動物園</option>
+                    <option value="#BR_dep_2">木柵</option>
+                    <option value="#BR_dep_3">萬芳社區</option>
+                    <option value="#BR_dep_4">萬芳醫院</option>
+                    <option value="#BR_dep_5">辛亥</option>
+                    <option value="#BR_dep_6">麟光</option>
+                    <option value="#BR_dep_7">六張犁</option>
+                    <option value="#BR_dep_8">科技大樓</option>
+                    <option value="#BR_dep_9">大安</option>
+                    <option value="#BR_dep_10">忠孝復興</option>
+                    <option value="#BR_dep_11">南京復興</option>
+                    <option value="#BR_dep_12">中山國中</option>
+                    <option value="#BR_dep_13">松山機場</option>
+                    <option value="#BR_dep_14">大直</option>
+                    <option value="#BR_dep_15">劍南路</option>
+                    <option value="#BR_dep_16">西湖</option>
+                    <option value="#BR_dep_17">港墘</option>
+                    <option value="#BR_dep_18">文德</option>
+                    <option value="#BR_dep_19">內湖</option>
+                    <option value="#BR_dep_20">大湖公園</option>
+                    <option value="#BR_dep_21">葫洲</option>
+                    <option value="#BR_dep_22">東湖</option>
+                    <option value="#BR_dep_23">南港軟體園區</option>
+                    <option value="#BR_dep_24">南港展覽館</option>
+                </select>
+            </div>
+
+            <!--選取淡水信義線後會出現的站-->
+            <div id="line_dep_R" class="A-4">淡水信義線
+                <label id="lblTitle_dep_R">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#R_dep_2">象山</option>
+                    <option value="#R_dep_3">台北101/世貿</option>
+                    <option value="#R_dep_4">信義安和</option>
+                    <option value="#R_dep_5">大安</option>
+                    <option value="#R_dep_6">大安森林公園</option>
+                    <option value="#R_dep_7">東門</option>
+                    <option value="#R_dep_8">中正紀念堂</option>
+                    <option value="#R_dep_9">台大醫院</option>
+                    <option value="#R_dep_10">台北車站</option>
+                    <option value="#R_dep_11">中山</option>
+                    <option value="#R_dep_12">雙連</option>
+                    <option value="#R_dep_13">民權西路</option>
+                    <option value="#R_dep_14">圓山</option>
+                    <option value="#R_dep_15">劍潭</option>
+                    <option value="#R_dep_16">士林</option>
+                    <option value="#R_dep_17">芝山</option>
+                    <option value="#R_dep_18">明德</option>
+                    <option value="#R_dep_19">石牌</option>
+                    <option value="#R_dep_20">唭哩岸</option>
+                    <option value="#R_dep_21">奇岩</option>
+                    <option value="#R_dep_22">北投</option>
+                    <option value="#R_dep_22p">新北投</option>
+                    <option value="#R_dep_23">復興崗</option>
+                    <option value="#R_dep_24">忠義</option>
+                    <option value="#R_dep_25">關渡</option>
+                    <option value="#R_dep_26">竹圍</option>
+                    <option value="#R_dep_27">紅樹林</option>
+                    <option value="#R_dep_28">淡水</option>
+
+                </select>
+            </div>
+
+            <!--選取松山新店線後會出現的站-->
+            <div id="line_dep_G" class="A-4">松山新店線
+                <label id="lblTitle_dep_G">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#G_dep_1">新店</option>
+                    <option value="#G_dep_2">新店區公所</option>
+                    <option value="#G_dep_3">七張</option>
+                    <option value="#G_dep_3A">小碧潭</option>
+                    <option value="#G_dep_4">大坪林</option>
+                    <option value="#G_dep_5">景美</option>
+                    <option value="#G_dep_6">萬隆</option>
+                    <option value="#G_dep_7">公館</option>
+                    <option value="#G_dep_8">台電大樓</option>
+                    <option value="#G_dep_9">古亭</option>
+                    <option value="#G_dep_10">中正紀念堂</option>
+                    <option value="#G_dep_11">小南門</option>
+                    <option value="#G_dep_12">西門</option>
+                    <option value="#G_dep_13">北門</option>
+                    <option value="#G_dep_14">中山</option>
+                    <option value="#G_dep_15">松江南京</option>
+                    <option value="#G_dep_16">南京復興</option>
+                    <option value="#G_dep_17">台北小巨蛋</option>
+                    <option value="#G_dep_18">南京三民</option>
+                    <option value="#G_dep_19">松山</option>
+
+                </select>
+            </div>
+            <!--選取中和新蘆線後會出現的站-->
+            <div id="line_dep_O" class="A-4">中和新蘆線
+                <label id="lblTitle_dep_O">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#O_dep_1">南勢角</option>
+                    <option value="#O_dep_2">景安</option>
+                    <option value="#O_dep_3">永安市場</option>
+                    <option value="#O_dep_4">頂溪</option>
+                    <option value="#O_dep_5">古亭</option>
+                    <option value="#O_dep_6">東門</option>
+                    <option value="#O_dep_7">忠孝新生</option>
+                    <option value="#O_dep_8">松江南京</option>
+                    <option value="#O_dep_9">行天宮</option>
+                    <option value="#O_dep_10">中山國小</option>
+                    <option value="#O_dep_11">民權西路</option>
+                    <option value="#O_dep_12">大橋頭</option>
+                    <option value="#O_dep_13">台北橋</option>
+                    <option value="#O_dep_14">菜寮</option>
+                    <option value="#O_dep_15">三重</option>
+                    <option value="#O_dep_16">先嗇宮</option>
+                    <option value="#O_dep_17">頭前庄</option>
+                    <option value="#O_dep_18">新莊</option>
+                    <option value="#O_dep_19">輔大</option>
+                    <option value="#O_dep_20">丹鳳</option>
+                    <option value="#O_dep_21">迴龍</option>
+                    <option value="#O_dep_50">三重國小</option>
+                    <option value="#O_dep_51">三和國中</option>
+                    <option value="#O_dep_52">徐匯中學</option>
+                    <option value="#O_dep_53">三民高中</option>
+                    <option value="#O_dep_54">蘆洲</option>
+                </select>
+            </div>
+            <!--選取板南線後會出現的站-->
+            <div id="line_dep_BL" class="A-4">板南線
+                <label id="lblTitle_dep_BL">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#BL_dep_1">頂埔</option>
+                    <option value="#BL_dep_2">永寧</option>
+                    <option value="#BL_dep_3">土城</option>
+                    <option value="#BL_dep_4">海山</option>
+                    <option value="#BL_dep_5">亞東醫院</option>
+                    <option value="#BL_dep_6">府中</option>
+                    <option value="#BL_dep_7">板橋</option>
+                    <option value="#BL_dep_8">新埔</option>
+                    <option value="#BL_dep_9">江子翠</option>
+                    <option value="#BL_dep_10">龍山寺</option>
+                    <option value="#BL_dep_11">西門</option>
+                    <option value="#BL_dep_12">台北車站</option>
+                    <option value="#BL_dep_13">善導寺</option>
+                    <option value="#BL_dep_14">忠孝新生</option>
+                    <option value="#BL_dep_15">忠孝復興</option>
+                    <option value="#BL_dep_16">忠孝敦化</option>
+                    <option value="#BL_dep_17">國父紀念館</option>
+                    <option value="#BL_dep_18">市政府</option>
+                    <option value="#BL_dep_19">永春</option>
+                    <option value="#BL_dep_20">後山埤</option>
+                    <option value="#BL_dep_21">昆陽</option>
+                    <option value="#BL_dep_22">南港</option>
+                    <option value="#BL_dep_23">南港展覽館</option>
+
+                </select>
+            </div>
+
+            <!--選取環狀線後會出現的站-->
+            <div id="line_dep_Y" class="A-4">環狀線
+                <label id="lblTitle_dep_Y">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#Y_dep_7">大坪林</option>
+                    <option value="#Y_dep_8">十四張</option>
+                    <option value="#Y_dep_9">秀朗橋</option>
+                    <option value="#Y_dep_10">景平</option>
+                    <option value="#Y_dep_11">景安</option>
+                    <option value="#Y_dep_12">中和</option>
+                    <option value="#Y_dep_13">橋和</option>
+                    <option value="#Y_dep_14">中原</option>
+                    <option value="#Y_dep_15">板新</option>
+                    <option value="#Y_dep_16">板橋</option>
+                    <option value="#Y_dep_17">新埔民生</option>
+                    <option value="#Y_dep_18">頭前庄</option>
+                    <option value="#Y_dep_19">幸福</option>
+                    <option value="#Y_dep_20">新北產業園區</option>
+
+                </select>
+
+            <!--            判斷要不要顯示-->
+            <script>
+                $(function () {
+                    //全部選擇隱藏
+                    $('div[id^="line_dep"]').hide();
+                    $('#slt_line_dep').change(function () {
+                        let sltValue = $(this).val();
+                        console.log(sltValue);
+
+                        $('div[id^="line_dep"]').hide();
+                        //指定選擇顯示
+                        $(sltValue).show();
+                    });
+                });
+            </script>
+            </div>
+            <script>
+                $(function () {
+                    //全部選擇隱藏
+                    $('div[id^="line_arr"]').hide();
+                    $('#slt_line_arr').change(function () {
+                        let sltValue = $(this).val();
+                        console.log(sltValue);
+
+                        $('div[id^="line_arr"]').hide();
+                        //指定選擇顯示
+                        $(sltValue).show();
+                    });
+                });
+            </script>
+
+<br><br><br><br>
+            <!--            先選抵達站所在的線-->
+
+            <h2>抵達站</h2>
+            <select class="form-control" id="slt_line_arr">
+                <option>請先選擇線</option>
+                <option value="#line_arr_BR">文湖線</option>
+                <option value="#line_arr_R">淡水信義線</option>
+                <option value="#line_arr_G">松山新店線</option>
+                <option value="#line_arr_O">中和新蘆線</option>
+                <option value="#line_arr_BL">板南線</option>
+                <option value="#line_arr_Y">環狀線</option>
+            </select>
+
+            <hr>
+            <!--            再選站-->
+            <!--選取文湖線後會出現的站-->
+            <div id="line_arr_BR" class="A-4">文湖線
+                <label id="lblTitle_arr_BR">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#BR_arr_1">動物園</option>
+                    <option value="#BR_arr_2">木柵</option>
+                    <option value="#BR_arr_3">萬芳社區</option>
+                    <option value="#BR_arr_4">萬芳醫院</option>
+                    <option value="#BR_arr_5">辛亥</option>
+                    <option value="#BR_arr_6">麟光</option>
+                    <option value="#BR_arr_7">六張犁</option>
+                    <option value="#BR_arr_8">科技大樓</option>
+                    <option value="#BR_arr_9">大安</option>
+                    <option value="#BR_arr_10">忠孝復興</option>
+                    <option value="#BR_arr_11">南京復興</option>
+                    <option value="#BR_arr_12">中山國中</option>
+                    <option value="#BR_arr_13">松山機場</option>
+                    <option value="#BR_arr_14">大直</option>
+                    <option value="#BR_arr_15">劍南路</option>
+                    <option value="#BR_arr_16">西湖</option>
+                    <option value="#BR_arr_17">港墘</option>
+                    <option value="#BR_arr_18">文德</option>
+                    <option value="#BR_arr_19">內湖</option>
+                    <option value="#BR_arr_20">大湖公園</option>
+                    <option value="#BR_arr_21">葫洲</option>
+                    <option value="#BR_arr_22">東湖</option>
+                    <option value="#BR_arr_23">南港軟體園區</option>
+                    <option value="#BR_arr_24">南港展覽館</option>
+                </select>
+            </div>
+
+            <!--選取淡水信義線後會出現的站-->
+            <div id="line_arr_R" class="A-4">淡水信義線
+                <label id="lblTitle_arr_R">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#R_arr_2">象山</option>
+                    <option value="#R_arr_3">台北101/世貿</option>
+                    <option value="#R_arr_4">信義安和</option>
+                    <option value="#R_arr_5">大安</option>
+                    <option value="#R_arr_6">大安森林公園</option>
+                    <option value="#R_arr_7">東門</option>
+                    <option value="#R_arr_8">中正紀念堂</option>
+                    <option value="#R_arr_9">台大醫院</option>
+                    <option value="#R_arr_10">台北車站</option>
+                    <option value="#R_arr_11">中山</option>
+                    <option value="#R_arr_12">雙連</option>
+                    <option value="#R_arr_13">民權西路</option>
+                    <option value="#R_arr_14">圓山</option>
+                    <option value="#R_arr_15">劍潭</option>
+                    <option value="#R_arr_16">士林</option>
+                    <option value="#R_arr_17">芝山</option>
+                    <option value="#R_arr_18">明德</option>
+                    <option value="#R_arr_19">石牌</option>
+                    <option value="#R_arr_20">唭哩岸</option>
+                    <option value="#R_arr_21">奇岩</option>
+                    <option value="#R_arr_22">北投</option>
+                    <option value="#R_arr_22p">新北投</option>
+                    <option value="#R_arr_23">復興崗</option>
+                    <option value="#R_arr_24">忠義</option>
+                    <option value="#R_arr_25">關渡</option>
+                    <option value="#R_arr_26">竹圍</option>
+                    <option value="#R_arr_27">紅樹林</option>
+                    <option value="#R_arr_28">淡水</option>
+
+                </select>
+            </div>
+
+            <!--選取松山新店線後會出現的站-->
+            <div id="line_arr_G" class="A-4">松山新店線
+                <label id="lblTitle_arr_G">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#G_arr_1">新店</option>
+                    <option value="#G_arr_2">新店區公所</option>
+                    <option value="#G_arr_3">七張</option>
+                    <option value="#G_arr_3A">小碧潭</option>
+                    <option value="#G_arr_4">大坪林</option>
+                    <option value="#G_arr_5">景美</option>
+                    <option value="#G_arr_6">萬隆</option>
+                    <option value="#G_arr_7">公館</option>
+                    <option value="#G_arr_8">台電大樓</option>
+                    <option value="#G_arr_9">古亭</option>
+                    <option value="#G_arr_10">中正紀念堂</option>
+                    <option value="#G_arr_11">小南門</option>
+                    <option value="#G_arr_12">西門</option>
+                    <option value="#G_arr_13">北門</option>
+                    <option value="#G_arr_14">中山</option>
+                    <option value="#G_arr_15">松江南京</option>
+                    <option value="#G_arr_16">南京復興</option>
+                    <option value="#G_arr_17">台北小巨蛋</option>
+                    <option value="#G_arr_18">南京三民</option>
+                    <option value="#G_arr_19">松山</option>
+
+                </select>
+            </div>
+            <!--選取中和新蘆線後會出現的站-->
+            <div id="line_arr_O" class="A-4">中和新蘆線
+                <label id="lblTitle_arr_O">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#O_arr_1">南勢角</option>
+                    <option value="#O_arr_2">景安</option>
+                    <option value="#O_arr_3">永安市場</option>
+                    <option value="#O_arr_4">頂溪</option>
+                    <option value="#O_arr_5">古亭</option>
+                    <option value="#O_arr_6">東門</option>
+                    <option value="#O_arr_7">忠孝新生</option>
+                    <option value="#O_arr_8">松江南京</option>
+                    <option value="#O_arr_9">行天宮</option>
+                    <option value="#O_arr_10">中山國小</option>
+                    <option value="#O_arr_11">民權西路</option>
+                    <option value="#O_arr_12">大橋頭</option>
+                    <option value="#O_arr_13">台北橋</option>
+                    <option value="#O_arr_14">菜寮</option>
+                    <option value="#O_arr_15">三重</option>
+                    <option value="#O_arr_16">先嗇宮</option>
+                    <option value="#O_arr_17">頭前庄</option>
+                    <option value="#O_arr_18">新莊</option>
+                    <option value="#O_arr_19">輔大</option>
+                    <option value="#O_arr_20">丹鳳</option>
+                    <option value="#O_arr_21">迴龍</option>
+                    <option value="#O_arr_50">三重國小</option>
+                    <option value="#O_arr_51">三和國中</option>
+                    <option value="#O_arr_52">徐匯中學</option>
+                    <option value="#O_arr_53">三民高中</option>
+                    <option value="#O_arr_54">蘆洲</option>
+                </select>
+            </div>
+            <!--選取板南線後會出現的站-->
+            <div id="line_arr_BL" class="A-4">板南線
+                <label id="lblTitle_arr_BL">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#BL_arr_1">頂埔</option>
+                    <option value="#BL_arr_2">永寧</option>
+                    <option value="#BL_arr_3">土城</option>
+                    <option value="#BL_arr_4">海山</option>
+                    <option value="#BL_arr_5">亞東醫院</option>
+                    <option value="#BL_arr_6">府中</option>
+                    <option value="#BL_arr_7">板橋</option>
+                    <option value="#BL_arr_8">新埔</option>
+                    <option value="#BL_arr_9">江子翠</option>
+                    <option value="#BL_arr_10">龍山寺</option>
+                    <option value="#BL_arr_11">西門</option>
+                    <option value="#BL_arr_12">台北車站</option>
+                    <option value="#BL_arr_13">善導寺</option>
+                    <option value="#BL_arr_14">忠孝新生</option>
+                    <option value="#BL_arr_15">忠孝復興</option>
+                    <option value="#BL_arr_16">忠孝敦化</option>
+                    <option value="#BL_arr_17">國父紀念館</option>
+                    <option value="#BL_arr_18">市政府</option>
+                    <option value="#BL_arr_19">永春</option>
+                    <option value="#BL_arr_20">後山埤</option>
+                    <option value="#BL_arr_21">昆陽</option>
+                    <option value="#BL_arr_22">南港</option>
+                    <option value="#BL_arr_23">南港展覽館</option>
+
+                </select>
+            </div>
+
+            <!--選取環狀線後會出現的站-->
+            <div id="line_arr_Y" class="A-4">環狀線
+                <label id="lblTitle_arr_Y">選取出發站</label>
+                <select class="form-control">
+                    <option >請選擇出發站</option>
+                    <option value="#Y_arr_7">大坪林</option>
+                    <option value="#Y_arr_8">十四張</option>
+                    <option value="#Y_arr_9">秀朗橋</option>
+                    <option value="#Y_arr_10">景平</option>
+                    <option value="#Y_arr_11">景安</option>
+                    <option value="#Y_arr_12">中和</option>
+                    <option value="#Y_arr_13">橋和</option>
+                    <option value="#Y_arr_14">中原</option>
+                    <option value="#Y_arr_15">板新</option>
+                    <option value="#Y_arr_16">板橋</option>
+                    <option value="#Y_arr_17">新埔民生</option>
+                    <option value="#Y_arr_18">頭前庄</option>
+                    <option value="#Y_arr_19">幸福</option>
+                    <option value="#Y_arr_20">新北產業園區</option>
+
+                </select>
+            </div>
+                <br><br><br><br>
+                <div style="text-align:right">
+                    <button type="button" class="btn btn-secondary">計算</button>
+
+                    <button type="button" class="btn btn-info">重置</button>
+                </div>
+
+
+
+    </div>
+
+
+
+<div class="container p-5 my-5 border ">
+
+    <h1>計算結果</h1>
+    <p>已計算出距離以及相對減少碳碳排量</p>
+    <div class="mb-3 mt-3 col">
+        <label for="mrtkm" class="form-label">距離</label>
+        <input class="form-control" id="mrtkm" placeholder="距離" name="mrtkm" disabled>
+    </div>
+    <div class="mb-3 mt-3 col">
+        <label for="mrtkg" class="form-label">相對汽車減少之碳排量</label>
+        <input class="form-control" id="mrtkg" placeholder="公斤數" name="mrtkg" disabled>
+
+    </div>
+    <div style="text-align:right">
+
+        <button type="button" class="btn btn-success">儲存</button>
+    </div>
+    <br>
+
+</div>
+
+        <div class="container p-5 my-5 border ">
+
+            <h1>歷史紀錄</h1>
+            <p>會列出儲存過的資料</p>
+            <table id="recordTable" class="display" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                </tr>
+                <tr>
+                    <td>Garrett Winters</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>63</td>
+                    <td>2011-07-25</td>
+                    <td>$170,750</td>
+                </tr>
+                <tr>
+                    <td>Ashton Cox</td>
+                    <td>Junior Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>66</td>
+                    <td>2009-01-12</td>
+                    <td>$86,000</td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+                </tfoot>
+            </table>
+            <script>
+            $(document).ready(function () {
+            $('#recordTable').DataTable({
+            paging: false,
+            ordering: false,
+            info: false,
+            });
+            });
+            </script>
+
+            <br>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Our Office</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                            class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Services</h4>
+                <a class="btn btn-link" href="">Landscaping</a>
+                <a class="btn btn-link" href="">Pruning plants</a>
+                <a class="btn btn-link" href="">Urban Gardening</a>
+                <a class="btn btn-link" href="">Garden Maintenance</a>
+                <a class="btn btn-link" href="">Green Technology</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Contact Us</a>
+                <a class="btn btn-link" href="">Our Services</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">Support</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Newsletter</h4>
+                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <div class="position-relative w-100">
+                    <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text"
+                           placeholder="Your email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
+                    href="https://themewagon.com">ThemeWagon</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/parallax/parallax.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>
